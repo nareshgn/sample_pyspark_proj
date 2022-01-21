@@ -1,11 +1,15 @@
 # import pyspark as s
 # from pyspark import *
+import sys
 import pandas as pd
+
+from utils.main_spark import read_files
 
 # from pyspark.sql import SparkSession
 
 # spark = SparkSession.builder.appName('PySpark Demo').getOrCreate()
-pd_df = pd.read_excel('data/sample_data.xlsx')
+read_file = sys.argv[1]
+pd_df = pd.read_excel(read_file)
 # spark_df = spark.createDataFrame(pd_df.astype(str))
 # spark_df.coalesce(1).write.mode('overwrite').csv("data/", header=True, encoding='utf-8')
 

@@ -24,7 +24,7 @@ def convert_xlsx_to_csv():
 
     print('------This is formatted CSV data-----')
     data = pd.read_csv("data/formatted_csvfile.csv", index_col=False, header=0)
-    print(data)
+    # print(data)
 
 
 def convert_csv_to_parquet():
