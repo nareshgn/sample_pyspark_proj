@@ -1,0 +1,11 @@
+Feature: Upload csv data to database, read data from db and validate
+
+  Scenario: Validate row count and columns match with the test data
+    Given I have a spark session
+    And a <csv_file> for the equivalent <table>
+    And I upload the csv data into database
+    When I select all the data from the table
+    Then the table result should match with csv data
+    Examples:
+    | csv_file | table |
+    |  person   |  person  |
